@@ -2,12 +2,19 @@ class User:
     """
     Class to create new user accounts
     """
+    users = []
 
-    def __init__(self, first, last):
+    def __init__(self, first_name, last_name):
         """
         Method to create instances of class User
         """
-        self.first = first
-        self.last = last
-        self.username = '@' + first
-        self.email = first + '.' + last + '@gmail.com'
+        self.first = first_name
+        self.last = last_name
+        self.username = '@' + first_name
+        self.email = first_name + '.' + last_name + '@gmail.com'
+
+    def save_user(self):
+        """
+        Function that saves new user instances
+        """
+        User.users.append(self)
