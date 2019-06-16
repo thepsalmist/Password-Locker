@@ -1,3 +1,4 @@
+#! /usr/bin/en python3.6
 from user import User
 from credentials import Credentials
 
@@ -30,6 +31,13 @@ def store_credentials(credentials):
     Function to store new user credentials
     """
     Credentials.save_credentials(credentials)
+
+
+def display_credentials(user_name):
+    """
+    Function to display saved account credentials
+    """
+    return Credentials.display_credentials(user_name)
 
 
 def auth_account(user_name, password):
@@ -69,10 +77,22 @@ def main():
             password = input("Enter Your Password")
             save_account(create_account(first_name, last_name, user_name, password))
             print("-"*10)
-            print(f'Account succesfully created, username {user_name}, password {password}.')
+            print(f"Account succesfully created, username {user_name}, password {password}.")
         elif short_code == "li":
             print("")
             print("-"*100)
             print("Log In with your username and password:")
             user_name = input("Enter your username:")
             password = input("Enter your password")
+            valid_user = auth_account(user_name, password)
+            if valid_user == user_name:
+                print("-"*10)
+                print(f"Welcome to password vault {user_name}. To proceed, pick one of the options below:")
+                print("-"*10)
+                while True:
+                    print(" ")
+                    print("-"*100)
+                    print("Use these short codes: \n 1. cc- Create new credentials \n 2. dc- Displaying saved credentials \n 3. dd- Delete credentials \n 4. ex- Exit ")
+                    short_code = input("Enter short code:")
+                    print(" ")
+                    print("-"*10)

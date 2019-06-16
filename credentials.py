@@ -48,9 +48,9 @@ class Credentials:
         """
         Method to display saved account credentials
         """
-        for credential in cls.account_credentials:
-            if credential.user_name = user_name:
-                account_credentials.append(credential)
+        for credentials in cls.account_credentials:
+            if credentials.user_name == user_name:
+                account_credentials.append(credentials)
 
         return account_credentials
 
@@ -59,6 +59,6 @@ class Credentials:
         """
         Method to delete user credentials
         """
-        for credential in cls.account_credentials:
-            if credential.user_name = user_name:
-                account_credentials.remove(credential)
+        for credentials in cls.account_credentials:
+            if credentials.user_name == user_name:
+                account_credentials.remove(credentials)
