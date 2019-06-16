@@ -8,6 +8,7 @@ class Credentials:
     Class to create and store user credentials
     """
     user_credential = []
+    account_credentials = []
 
     def __init__(self, website, user_name, account_name, password):
         """
@@ -43,4 +44,21 @@ class Credentials:
             return present_user
 
     @classmethod
-    def display_credentials(cls,)
+    def display_credentials(cls, user_name):
+        """
+        Method to display saved account credentials
+        """
+        for credential in cls.account_credentials:
+            if credential.user_name = user_name:
+                account_credentials.append(credential)
+
+        return account_credentials
+
+    @classmethod
+    def delete_credentials(cls, user_name):
+        """
+        Method to delete user credentials
+        """
+        for credential in cls.account_credentials:
+            if credential.user_name = user_name:
+                account_credentials.remove(credential)
