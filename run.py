@@ -60,7 +60,7 @@ def create_password():
     Function to create a random password for the users
     """
     new_password = Credentials.random_password()
-    return random_password
+    return new_password
 
 
 def main():
@@ -84,24 +84,23 @@ def main():
             password = input("Enter Your Password")
             save_account(create_account(first_name, last_name, user_name, password))
             print("-"*10)
-            print(f"Account succesfully created, username {user_name}, password {password}.")
+            print(f"Account succesfully created, username: {user_name}, password: {password}.")
         elif short_code == "li":
             print("")
             print("-"*100)
             print("Log In with your username and password:")
-            user_name = input("Enter your username:")
-            password = input("Enter your password")
+            user_name = input("Enter your username: ")
+            password = input("Enter your password: ")
             valid_user = auth_account(user_name, password)
             if valid_user == user_name:
                 print("-"*10)
                 print(f"Welcome to password vault {user_name}. To proceed, pick one of the options below:")
-                print("-"*10)
+                print("*"*10 + "*"*10)
                 while True:
-                    print(" ")
                     print("-"*100)
                     print("Use these short codes: \n 1. cc- Create new credentials \n 2. dc- Displaying saved credentials \n 3. dd- Delete credentials \n 4. ex- Exit ")
-                    short_code = input("Enter short code:")
                     print(" ")
+                    short_code = input("Enter short code:")
                     print("-"*10)
                     if short_code == "cc":
                         print(" ")
@@ -115,15 +114,15 @@ def main():
                             print(
                                 " Choose password option as below \n a- Enter existing password b- generate new password")
                             password_code = input("Password option:").lower()
-                            if password_code = "a":
+                            if password_code == "a":
                                 print(" ")
                                 print("Enter you password:")
                                 break
-                            elif password_code = "b":
+                            elif password_code == "b":
                                 print(" ")
                                 password = create_password()
                                 break
-                            elif password_code = "c":
+                            elif password_code == "c":
                                 break
                     elif short_code == "dc":
                         print(" ")
