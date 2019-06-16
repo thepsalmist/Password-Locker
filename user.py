@@ -4,7 +4,7 @@ class User:
     """
     users = []
 
-    def __init__(self, first_name, last_name, user_name password):
+    def __init__(self, first_name, last_name, user_name, password):
         """
         Method to create instances of class User
         """
