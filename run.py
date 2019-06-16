@@ -34,7 +34,6 @@ def main():
             print("Fill in the details below to Sign-up for a new account:")
             first_name = input("First Name:")
             last_name = input("Last Name:")
-            username = '@' + first_name
             password = input("Enter Your Password")
             save_account(create_account(first_name, last_name, password))
             print("-"*10)
