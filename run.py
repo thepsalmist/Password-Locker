@@ -107,8 +107,9 @@ def main():
                         print("Enter account credentials:")
                         website = input("Website Name....")
                         account_name = input("User Account Name...")
+                        print(" ")
                         print(
-                            "Do you have an existing password? You can alternatively generate a new password below.")
+                            "Do you have an existing password? You can alternatively generate a new password below:")
                         while True:
                             print(" ")
                             print(
