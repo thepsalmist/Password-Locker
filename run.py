@@ -157,5 +157,9 @@ def main():
                     print(" ")
                     print("Sorry that account does not exist, please try again!")
                     print("-"*10)
-            elif short_code == "ex":
-                break
+        elif short_code == "ex":
+            break
+
+
+if __name__ == '__main__':
+    main()
