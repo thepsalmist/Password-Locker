@@ -7,7 +7,7 @@ class Credentials:
     """
     Class to create and store user credentials
     """
-    user_credential = []
+    user_credentials = []
     account_credentials = []
 
     def __init__(self, website, user_name, account_name, password):
@@ -23,7 +23,7 @@ class Credentials:
         """
         Function that saves new credentials instances
         """
-        Credentials.user_credential.append(self)
+        Credentials.user_credentials.append(self)
 
     def random_password():
         """
@@ -48,10 +48,10 @@ class Credentials:
         """
         Method to display saved account credentials
         """
-        for credentials in cls.account_credentials:
+        account_credentials = []
+        for credentials in cls.user_credentials:
             if credentials.user_name == user_name:
                 account_credentials.append(credentials)
-
         return account_credentials
 
     @classmethod
@@ -59,6 +59,8 @@ class Credentials:
         """
         Method to delete user credentials
         """
-        for credentials in cls.account_credentials:
+        account_credentials = []
+        for credentials in cls.user_credentials:
             if credentials.user_name == user_name:
-                account_credentials.remove(credentials)
+                account_credentials.pop(credentials)
+        return account_credentials
