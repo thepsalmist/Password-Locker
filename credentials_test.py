@@ -20,10 +20,18 @@ class TestCredentials(unittest.TestCase):
         """
         test_init test case to test if the object is initialized properly
         """
-        self.assertEqual(self.new_credentials.first_name, "Dinos")
-        self.assertEqual(self.new_credentials.last_name, "Gianis")
-        self.assertEqual(self.new_credentials.user_name, "Dinos254")
+        self.assertEqual(self.new_credentials.user_name, "Dinos")
+        self.assertEqual(self.new_credentials.website, "WeChat")
+        self.assertEqual(self.new_credentials.account_name, "dinos254")
         self.assertEqual(self.new_credentials.password, 'pass12345')
+
+    def test_save_credentials(self):
+        """
+        Test to asertain that the new credentials are saved into the user_credentials list and check the user_credentials list length
+        """
+        self.new_credentials.save_credentials()
+        Messenger = Credentials("Lalas", "Messenger", "lalas254", "papass12345")
+        self.assertEqual(len(Credentials.user_credentials), 2)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 #! /usr/bin/en python3.6
 from user import User
 from credentials import Credentials
+from random import choice
 
 
 def create_account(first_name, last_name, user_name, password):
